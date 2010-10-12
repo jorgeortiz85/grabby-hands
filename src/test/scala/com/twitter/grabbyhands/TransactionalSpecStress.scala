@@ -33,7 +33,7 @@ object TransactionalSpecStress extends SpecBase(50) {
     config.reconnectHolddownMs = 50
     config.recvTransactional = true
     testNumQueues must be_<=(numQueues)
-    val testQueues = queues.slice(0, testNumQueues).force
+    val testQueues = queues.slice(0, testNumQueues)
     val queueConfig = config.addQueues(testQueues)
 
     ctor()
