@@ -28,6 +28,6 @@ class Counters() {
     val rv = new HashMap[String, Long]()
     rv + ("threads" -> threads.get)
     rv + ("pausedThreads" -> pausedThreads.get)
-    rv.readOnly
+    rv
   }
 }

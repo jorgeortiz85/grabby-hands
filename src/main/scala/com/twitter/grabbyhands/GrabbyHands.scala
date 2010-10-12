@@ -33,7 +33,7 @@ class GrabbyHands(val config: Config) {
   val serverCounters: Map[String, ServerCounters] = {
     val rv = new HashMap[String, ServerCounters]()
     config.servers.foreach(server => rv + (server -> new ServerCounters()))
-    rv.readOnly
+    rv
   }
 
   protected[grabbyhands] val queues = Queue.factory(this)
@@ -41,7 +41,7 @@ class GrabbyHands(val config: Config) {
   val queueCounters: Map[String, QueueCounters] = {
     val rv = new HashMap[String, QueueCounters]()
     queues.values.foreach(queue => rv + (queue.name -> queue.counters))
-    rv.readOnly
+    rv
   }
 
   log.fine("grabbyhands started")
@@ -141,7 +141,7 @@ class GrabbyHands(val config: Config) {
         rv += "queue." + queue + "." + name -> value
       }
     }
-    rv.readOnly
+    rv
   }
 }
 

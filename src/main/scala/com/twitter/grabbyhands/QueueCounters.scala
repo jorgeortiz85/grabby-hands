@@ -39,6 +39,6 @@ class QueueCounters() {
     rv + ("kestrelGetTimeouts" -> kestrelGetTimeouts.get)
     rv + ("protocolError" -> protocolError.get)
     rv + ("sendCancelled" -> sendCancelled.get)
-    rv.readOnly
+    rv
   }
 }

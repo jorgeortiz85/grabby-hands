@@ -50,6 +50,6 @@ class ServerCounters() {
     rv + ("connectionReadTimeout" -> connectionReadTimeout.get)
     rv + ("connectionWriteTimeout" -> connectionWriteTimeout.get)
     rv + ("protocolError" -> protocolError.get)
-    rv.readOnly
+    rv
   }
 }

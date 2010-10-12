@@ -70,7 +70,7 @@ class Config() extends ConfigConnection {
       val queue = addQueue(name)
       rv + (name -> addQueue(name))
     }
-    rv.readOnly
+    rv
   }
 
   /** Adds several queues, inheriting the current parameters. */

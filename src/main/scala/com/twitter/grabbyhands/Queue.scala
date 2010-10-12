@@ -85,6 +85,6 @@ protected [grabbyhands] object Queue {
     val rv = new HashMap[String, Queue]()
     grabbyHands.config.queues.values.foreach(
       queue => rv + (queue.name -> new Queue(grabbyHands, queue)))
-    rv.readOnly
+    rv
   }
 }
