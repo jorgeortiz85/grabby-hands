@@ -84,7 +84,7 @@ protected [grabbyhands] object Queue {
   def factory(grabbyHands: GrabbyHands): Map[String, Queue] = {
     val rv = new HashMap[String, Queue]()
     grabbyHands.config.queues.values.foreach(
-      queue => rv + (queue.name -> new Queue(grabbyHands, queue)))
+      queue => rv += (queue.name -> new Queue(grabbyHands, queue)))
     rv
   }
 }
