@@ -18,7 +18,7 @@ package com.twitter.grabbyhands
 import java.util.logging.{FileHandler,Level,Logger,SimpleFormatter}
 import org.specs.Specification
 
-class SpecBase(val numQueues: Int) extends Specification {
+abstract class SpecBase(val numQueues: Int) extends Specification {
   val log = Logger.getLogger(GrabbyHands.logname)
   var grab: GrabbyHands = _
   var config: Config = _
