@@ -5,5 +5,5 @@ class ConfiggyProject(info: ProjectInfo) extends DefaultProject(info) {
   val vscaladoc = "org.scala-tools" % "vscaladoc" % "1.1-md-3" % "compile"
   val junit = "junit" % "junit" % "4.7" % "test"
 
-  override def compileOptions = super.compileOptions ++ Seq(CompileOption("-Xmigration"))
+  override def compileOptions = super.compileOptions ++ Seq(CompileOption("-Xmigration"), CompileOption("-Xwarninit"))
 }

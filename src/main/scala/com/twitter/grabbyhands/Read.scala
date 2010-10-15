@@ -45,7 +45,7 @@ class Read(val message: ByteBuffer, val connection:ConnectionRecv )
     completedLatch.getCount == 0
   }
 
-  protected[grabbyhands] def close(success:Boolean) {
+  def close(success:Boolean) {
     if(success) completedLatch.countDown()
     else abort()
   }
