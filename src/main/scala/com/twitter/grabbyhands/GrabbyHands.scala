@@ -48,14 +48,16 @@ class GrabbyHands(val config: Config) {
 
   /** Returns an internal queue that delivers new messages from Kestrel. */
   def getRecvQueue(queue: String): BlockingQueue[ByteBuffer] = {
-    if(config.recvTransactional) throw new IllegalStateException("Transactional read set")
-    queues(queue).recvQueue
+    val q = queues(queue)
+    if(q.config.recvTransactional) throw new IllegalStateException("Transactional read set")
+    q.recvQueue
   }
 
   /** Returns an internal queue that delivers new messages from Kestrel. */
   def getRecvTransQueue(queue: String): BlockingQueue[Read] = {
-    if (!config.recvTransactional) throw new IllegalStateException("No transactional read")
-    queues(queue).transRecvQueue
+    val q = queues(queue)
+    if (!q.config.recvTransactional) throw new IllegalStateException("No transactional read")
+    q.transRecvQueue
   }
 
   /** Returns an internal queue that delivers messages to Kestrel. */
